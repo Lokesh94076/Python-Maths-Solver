@@ -1,9 +1,6 @@
-# TODO --
-# 1- Make default options for every command.
-# 2- Better error handling and better call function
-# 3- Implement function for factorial
-# 4- Trignometric functions implimentation.
-# 5- Learn calculus for implimentaiton.-basics and graphically.
+# Rule
+# A single fundamental maths function, returning a single value. nothing in between, lists can be count as single vlaue if in loop.
+# No hardcoded values or "cheats"
 
 
 def add_function(*inputs):
