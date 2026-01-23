@@ -2,7 +2,7 @@
 
 from source import main as math
 
-print(math.smp("round", 2.05))
+print(math.adv("clamp", 2, 4, 6))
 
 
 # TODO --
