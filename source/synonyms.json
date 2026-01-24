@@ -27,5 +27,9 @@
   "random_in": "random-int",
   "ran-i": "random-int",
   "rand": "random",
-  "ran": "random"
+  "ran": "random",
+  "norm": "normalize",
+  "1lerp": "1D_lerp",
+  "1dlerp": "1D_lerp",
+  "dist": "distance"
 }

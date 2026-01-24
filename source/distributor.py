@@ -17,6 +17,9 @@ OPS = {
     "random": rng.generate_random_ninp,
     "round": arithmetic.round_function,
     "clamp": adv_d_l.clamp,
+    "normalize": adv_d_l.normalize,
+    "1D_lerp": adv_d_l.oneD_lerp,
+    "distance": arithmetic.distance,
 }
 
 
