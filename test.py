@@ -2,9 +2,10 @@
 # TOMORROW = ADD Default Values System for all + future. BIG == CHANGE ADV TO DIFFERENT, SO WE CANT ACCESS SMP FUNCTION FROM ONE ANOTHER.
 from source import main as math
 
-# print(math.doc("normalize"))
+command = "dist"
 
-print(math.adv("dist", -2, -6))
+print(math.doc(command))
+print(math.adv(command, -2, -6))
 
 # TODO --
 # 1- Make default options for every command.  -- TOMORROW
