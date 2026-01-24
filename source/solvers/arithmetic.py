@@ -3,6 +3,9 @@
 # No hardcoded values or "cheats"
 
 
+from operator import sub
+
+
 def add_function(*inputs):
     return sum(inputs)
 
@@ -68,6 +71,10 @@ def max_function(*input):
 
 def round_function(a, precision):
     return round(a, precision)
+
+
+def distance(start, end):
+    return absolute_value(sub_function(end, start))
 
 
 # documentation done till here <- MOVE THIS
