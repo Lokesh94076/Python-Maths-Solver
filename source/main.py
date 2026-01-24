@@ -1,6 +1,8 @@
 # local modules
-from . import distributor as distributor
 from . import synonyms as synonyms
+from .distributor import adv_distributor as adv_distributor
+from .distributor import cmplx_distributor as cmplx_distributor
+from .distributor import smp_distributor as smp_distributor
 
 
 # documentation access
@@ -19,13 +21,13 @@ def documentation(name):
 def smp(function_name, *inputs):
     for x in inputs:
         if not isinstance(x, (int, float)):
-            return "ERROR - Wrong format OR inputs"
+            raise ValueError("Call without any inputs.")
     if function_name in synonyms.Synonyms:
         filtered_function_name = synonyms.Synonyms[function_name]
     else:
         filtered_function_name = function_name
     # print(f"listed_input: {listed_input}\nfiltered-function: {filtered_function_name}\ninputs: {inputs}\n")
-    return distributor.distribute(filtered_function_name, *inputs)
+    return smp_distributor.distribute(filtered_function_name, *inputs)
 
 
 # WIP
@@ -34,13 +36,27 @@ def smp(function_name, *inputs):
 def adv(function_name, *inputs):
     for x in inputs:
         if not isinstance(x, (int, float)):
-            return "ERROR - Wrong format OR inputs"
+            raise ValueError("Call without any inputs.")
     if function_name in synonyms.Synonyms:
         filtered_function_name = synonyms.Synonyms[function_name]
     else:
         filtered_function_name = function_name
     # print(f"listed_input: {listed_input}\nfiltered-function: {filtered_function_name}\ninputs: {inputs}\n")
-    return distributor.distribute(filtered_function_name, *inputs)
+    return adv_distributor.distribute(filtered_function_name, *inputs)
+
+
+# COMPLEX - Function
+# Type - Only deals with complex maths equations and stuff, usually a combination of adv and smp
+def cmplx(function_name, *inputs):
+    for x in inputs:
+        if not isinstance(x, (int, float)):
+            raise ValueError("Call without any inputs.")
+    if function_name in synonyms.Synonyms:
+        filtered_function_name = synonyms.Synonyms[function_name]
+    else:
+        filtered_function_name = function_name
+    # print(f"listed_input: {listed_input}\nfiltered-function: {filtered_function_name}\ninputs: {inputs}\n")
+    return cmplx_distributor.distribute(filtered_function_name, *inputs)
 
 
 # DOCUMENTATION return

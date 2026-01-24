@@ -1,11 +1,11 @@
 # TODAY = CLAMP{DONE}, NORMALIZE{DONE}, LERP{DONE}, DISTANCE{DONE} all are to be done in adv-core.
-# TOMORROW = ADD Default Values System for all + future. BIG == CHANGE ADV TO DIFFERENT, SO WE CANT ACCESS SMP FUNCTION FROM ONE ANOTHER.
+# TOMORROW = ADD Default Values System for all + future.
 from source import main as math
 
-command = "dist"
+command = "distance"
 
 print(math.doc(command))
-print(math.adv(command, -2, -6))
+print(math.smp(command, -2, 15))
 
 # TODO --
 # 1- Make default options for every command.  -- TOMORROW
@@ -13,4 +13,3 @@ print(math.adv(command, -2, -6))
 # 3- Implement function for factorial
 # 4- Trignometric functions implimentation.
 # 5- Learn calculus for implimentaiton.-basics and graphically.
-# 6- make every function type distinguishable. from other, not able to use other functions from another. -- TOMORROW

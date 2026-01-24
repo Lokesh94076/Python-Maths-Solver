@@ -1,6 +1,4 @@
-from .solvers import advance_data_logic as adv_d_l
-from .solvers import arithmetic as arithmetic
-from .solvers import random_number_generator as rng
+from ..solvers import arithmetic as arithmetic
 
 OPS = {
     "add": arithmetic.add_function,
@@ -13,12 +11,7 @@ OPS = {
     "abs": arithmetic.absolute_value,
     "min": arithmetic.min_function,
     "max": arithmetic.max_function,
-    "random-int": rng.generate_random,
-    "random": rng.generate_random_ninp,
     "round": arithmetic.round_function,
-    "clamp": adv_d_l.clamp,
-    "normalize": adv_d_l.normalize,
-    "1D_lerp": adv_d_l.oneD_lerp,
     "distance": arithmetic.distance,
 }
 
