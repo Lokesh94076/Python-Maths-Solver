@@ -1,8 +1,8 @@
-# TODAY = CLAMP, NORMALIZE, LERP, DISTANCE all are to be done in adv-core.
+# TODAY = CLAMP{DONE}, NORMALIZE, LERP, DISTANCE all are to be done in adv-core.
 
 from source import main as math
 
-print(math.adv("clamp", 2, 4, 6))
+print(math.doc("clamp"))
 
 
 # TODO --
