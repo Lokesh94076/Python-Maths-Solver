@@ -13,6 +13,7 @@ OPS = {
     "max": arithmetic.max_function,
     "round": arithmetic.round_function,
     "distance": arithmetic.distance,
+    "receprocal": arithmetic.receprocal,
 }
 
 
