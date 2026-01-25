@@ -28,4 +28,40 @@ def oneD_lerp(t, a, b):
     return art.mul_function(art.add_function(a, art.sub_function(b, a)), t)
 
 
+def sign(x):
+    if x < 0:
+        return -1
+    elif x > 0:
+        return 1
+    else:
+        return 0
+
+
+def approx_equal(a, b, threshold):
+    diff = abs(a - b)
+    limit = threshold * max(1.0, abs(a), abs(b))
+
+    return diff <= limit
+
+
+def percent_equal(a, b, percent):
+    diff = abs(a - b)
+    limit = percent / 100 * abs(a)
+
+    return diff <= limit
+
+
+def abs_equal(a, b, threshold):
+    diff = abs(a - b)
+    return diff <= threshold
+
+
+def in_range(value, low, high):
+    return low <= value <= high
+
+
+def wrap(x, min, max):
+    return ((x - min) % (max - min) + (max - min)) % (max - min) + min
+
+
 # Documentation Done till here <-------- Move This

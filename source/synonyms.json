@@ -31,5 +31,8 @@
   "norm": "normalize",
   "1lerp": "1D_lerp",
   "1dlerp": "1D_lerp",
-  "dist": "distance"
+  "dist": "distance",
+  "approx_equal": "apx_eql",
+  "appx_equal": "apx_eql",
+  "per_eql": "percent_equal"
 }

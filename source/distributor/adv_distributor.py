@@ -1,9 +1,15 @@
-from ..solvers import advance_data_logic as adv_d_l
+from ..solvers import advance_data_logic as advance
 
 OPS = {
-    "clamp": adv_d_l.clamp,
-    "normalize": adv_d_l.normalize,
-    "1D_lerp": adv_d_l.oneD_lerp,
+    "clamp": advance.clamp,
+    "normalize": advance.normalize,
+    "1D_lerp": advance.oneD_lerp,
+    "sign": advance.sign,
+    "abs_equal": advance.abs_equal,
+    "apx_eql": advance.approx_equal,
+    "percent_equal": advance.percent_equal,
+    "in_range": advance.in_range,
+    "wrap": advance.wrap,
 }
 
 

@@ -77,4 +77,8 @@ def distance(start, end):
     return absolute_value(sub_function(end, start))
 
 
+def receprocal(x):
+    return 1 / x
+
+
 # documentation done till here <- MOVE THIS
