@@ -1,5 +1,9 @@
 {
-  "add": "smp, a + b + c + ... + n_term; can be list.",
+  "add": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th;",
+    "description": "add's arguements together. as; a+b+c+...+n_th"
+  },
   "mul": "smp, a * b * c * ... * n_term; can be list.",
   "sub": "smp, b - a; 2 inputs only",
   "div": "smp, a/b; 2 inputs only",

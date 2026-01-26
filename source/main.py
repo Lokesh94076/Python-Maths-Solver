@@ -3,17 +3,7 @@ from . import synonyms as synonyms
 from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
-
-
-# documentation access
-def documentation(name):
-    if name in synonyms.Docu:
-        docu = synonyms.Docu[name]
-    else:
-        raise ValueError(
-            "Not Found in Documentation database - check the function name(priority)"
-        )
-    return docu
+from .doc import documentation
 
 
 # SIMPLE - Function
@@ -59,12 +49,5 @@ def cmplx(function_name, *inputs):
     return cmplx_distributor.distribute(filtered_function_name, *inputs)
 
 
-# DOCUMENTATION return
 def doc(function_name):
-    if function_name == None:
-        raise ValueError("Call without any inputs.")
-    if function_name in synonyms.Synonyms:
-        filtered_function_name = synonyms.Synonyms[function_name]
-    else:
-        filtered_function_name = function_name
-    return documentation(filtered_function_name)
+    return documentation.Open_File(function_name)

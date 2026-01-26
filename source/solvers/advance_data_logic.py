@@ -38,21 +38,21 @@ def sign(x):
 
 
 def approx_equal(a, b, threshold):
-    diff = abs(a - b)
-    limit = threshold * max(1.0, abs(a), abs(b))
-
+    diff = art.absolute_value(art.sub_function(a, b))
+    limit = threshold * art.max_function(
+        1.0, art.absolute_value(a), art.absolute_value(b)
+    )
     return diff <= limit
 
 
 def percent_equal(a, b, percent):
-    diff = abs(a - b)
-    limit = percent / 100 * abs(a)
-
+    diff = art.absolute_value(art.sub_function(a, b))
+    limit = percent / art.mul_function(100, art.absolute_value(a))
     return diff <= limit
 
 
 def abs_equal(a, b, threshold):
-    diff = abs(a - b)
+    diff = art.absolute_value(art.sub_function(a, b))
     return diff <= threshold
 
 
@@ -61,7 +61,14 @@ def in_range(value, low, high):
 
 
 def wrap(x, min, max):
-    return ((x - min) % (max - min) + (max - min)) % (max - min) + min
+    return art.add_function(
+        (
+            art.sub_function(x, min)
+            % art.add_function(art.sub_function(max, min), art.sub_function(max, min))
+        )
+        % art.sub_function(max, min),
+        min,
+    )
 
 
 # Documentation Done till here <-------- Move This
