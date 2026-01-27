@@ -1,0 +1,12 @@
+{
+  "random-int": {
+    "category": "cmplx",
+    "args": "a, b",
+    "description": "generated a random integer between given inputs. 2 inputs(min, max);"
+  },
+  "random": {
+    "category": "cmplx",
+    "args": "N/A",
+    "description": "generated a random number using computer entropy. generates a 13-16 digit number, HIGH RESOURCE!, NO inputs"
+  }
+}

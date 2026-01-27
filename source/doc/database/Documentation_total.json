@@ -1,30 +1,122 @@
 {
   "add": {
     "category": "smp",
-    "args": "a, b, c, ..., n_th;",
-    "description": "add's arguements together. as; a+b+c+...+n_th"
+    "args": "a, b, c, ..., n_th",
+    "description": "add's values together. as; a+b+c+...+n_th"
   },
-  "mul": "smp, a * b * c * ... * n_term; can be list.",
-  "sub": "smp, b - a; 2 inputs only",
-  "div": "smp, a/b; 2 inputs only",
-  "pwr": "smp, a**b; 2 inputs only",
-  "sqrt": "smp, value x when multiplied to itself gives a(input), thus; x*x = a; only 1 input",
-  "arithmetic_average": "smp, average; (a+b+c+...+n_term)/(no of terms), can be list",
-  "abs": "smp, absolute, if number n is < 0; then -(n), if 0; then 0; if > 0 then n.; 1 input only",
-  "min": "smp, minimum of the given values, can be list",
-  "max": "smp, maximum of the given values, can be list",
-  "random-int": "cmplx, generated a random integer between given inputs. 2 inputs(min, max);",
-  "random": "cmplx, generated a random number using computer entropy. generates a 13-16 digit number, HIGH RESOURCE!, NO inputs",
-  "round": "smp, rounds number to given decimal places, 2 inputs(input_number, decimal_places)",
-  "clamp": "adv, makes the value stay under desired values, 3 inputs(input_value, min_value, max_value)",
-  "normalize": "adv, returns normalized value restricted to 0 - 1. 5 inputs(input_value, min_value, max_value, new_min, new_max)",
-  "1D_lerp": "adv, Linear interpolation, 3 inputs(value{0-1}, a-point, b-point",
-  "distance": "smp, gives distance between 2 points on a 1-D axis, value is absolute, 2 inputs(start-point, end-point)",
-  "receprocal": "smp, receprocal of x returns 1/x. 1 input(value)",
-  "sign": "adv, sign(x) returns -1 if x<0; returns 0 if x=0; returns 1 if x<1. 1 input(value)",
-  "abs_equal": "adv, absolute_equal gives Voolean True/False for 2 values if they are close enough by a certain threshold(value), 3 inputs(a_value, b_vlaue, threshold). NOTE-FLOATING POINT ERROR exists",
-  "apx_eql": "adv, approx_equal gives Boolean True/False for 2 values if they are 'close enough' or not by a threshold(relative), 3 inputs(a_value, b_value, threshold)",
-  "percent_equal": "adv, percent_equal gives Boolean True/False for 2 values if they are 'close enough' or not by a threshold in percent, 3 inputs(a_value, b_value, threshold)",
-  "in_range": "adv, in_range tell if value(x) is between low_value, and high_value, such that; low<x<high; if yes, then TRUE, else FALSE. 3 inputs(value, low_value, high_value).",
-  "wrap": "adv, value x to a specific range [min, max] by wrapping it back to the start if it exceeds the maximum, or back to the end if it falls below the minimum, 3 inputs(value, min, max)"
+  "mul": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th",
+    "description": "multiplies's values together. as; a*b*c*...*n_th"
+  },
+  "sub": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "subtracts a from b, a - b."
+  },
+  "div": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "divides value a from b, a/b."
+  },
+  "pwr": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "a**b, a^b, a with power b."
+  },
+  "sqrt": {
+    "category": "smp",
+    "args": "a",
+    "description": "value x when multiplied to itself gives a(input), thus; x*x = a"
+  },
+  "arithmetic_average": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th",
+    "description": "average; (a+b+c+...+n_term)/(no of terms), can be list"
+  },
+  "abs": {
+    "category": "smp",
+    "args": "a",
+    "description": "absolute, if number n is < 0; then -(n), if 0; then 0; if > 0 then n."
+  },
+  "min": {
+    "category": "smp",
+    "args": "[a, b, c, ..., n_th]",
+    "description": "minimum of the given values, can be list"
+  },
+  "max": {
+    "category": "smp",
+    "args": "[a, b, c, ..., n_th]",
+    "description": "maximum of the given values, can be list"
+  },
+  "random-int": {
+    "category": "cmplx",
+    "args": "a, b",
+    "description": "generated a random integer between given inputs. 2 inputs(min, max);"
+  },
+  "random": {
+    "category": "cmplx",
+    "args": "N/A",
+    "description": "generated a random number using computer entropy. generates a 13-16 digit number, HIGH RESOURCE!, NO inputs"
+  },
+  "round": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "rounds number to given decimal places, 2 inputs(input_number, decimal_places)"
+  },
+  "clamp": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "makes the value stay under desired values, 3 inputs(input_value, min_value, max_value)"
+  },
+  "normalize": {
+    "category": "adv",
+    "args": "a, b, c, d, e",
+    "description": "returns normalized value restricted to 0 - 1. 5 inputs(input_value, min_value, max_value, new_min, new_max)"
+  },
+  "1D_lerp": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "Linear interpolation, 3 inputs(value{0-1}, a-point, b-point"
+  },
+  "distance": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "gives distance between 2 points on a 1-D axis, value is absolute, 2 inputs(start-point, end-point)"
+  },
+  "receprocal": {
+    "category": "smp",
+    "args": "x",
+    "description": "receprocal of x returns 1/x. 1 input(value)"
+  },
+  "sign": {
+    "category": "adv",
+    "args": "x",
+    "description": "sign(x) returns -1 if x<0; returns 0 if x=0; returns 1 if x<1. 1 input(value)"
+  },
+  "abs_equal": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "absolute_equal gives Voolean True/False for 2 values if they are close enough by a certain threshold(value), 3 inputs(a_value, b_vlaue, threshold). NOTE-FLOATING POINT ERROR exists"
+  },
+  "apx_eql": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "approx_equal gives Boolean True/False for 2 values if they are 'close enough' or not by a threshold(relative), 3 inputs(a_value, b_value, threshold)"
+  },
+  "percent_equal": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "percent_equal gives Boolean True/False for 2 values if they are 'close enough' or not by a threshold in percent, 3 inputs(a_value, b_value, threshold)"
+  },
+  "in_range": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "in_range tell if value(x) is between low_value, and high_value, such that; low<x<high; if yes, then TRUE, else FALSE. 3 inputs(value, low_value, high_value)."
+  },
+  "wrap": {
+    "category": "adv",
+    "args": "a, b, c",
+    "description": "value x to a specific range [min, max] by wrapping it back to the start if it exceeds the maximum, or back to the end if it falls below the minimum, 3 inputs(value, min, max)"
+  }
 }

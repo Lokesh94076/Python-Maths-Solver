@@ -1,4 +1,6 @@
 # local modules
+
+
 from . import synonyms as synonyms
 from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
@@ -49,5 +51,32 @@ def cmplx(function_name, *inputs):
     return cmplx_distributor.distribute(filtered_function_name, *inputs)
 
 
+# WIP, SEE AGAGIN FOR RELIABILITY.
 def doc(function_name):
-    return documentation.Open_File(function_name)
+    list_categories = ["smp", "adv", "cmplx", "total"]
+    n = 0
+    nu = 0
+    filtered_function_name = ""
+    for i in range(len(list_categories)):
+        if function_name == list_categories[n]:
+            return documentation.get_documentation(function_name, "file")
+        n += 1
+    else:
+        if function_name in synonyms.Synonyms:
+            filtered_function_name = synonyms.Synonyms[function_name]
+        else:
+            filtered_function_name = function_name
+    while nu < len(list_categories):
+        if filtered_function_name in documentation.get_documentation(
+            list_categories[nu], "file"
+        ):
+            category = list_categories[nu]
+            return documentation.get_documentation(filtered_function_name, category)
+        nu += 1
+    else:
+        raise ValueError("Function not found in documentation. any")
+
+
+def validate():
+    # create the validation tool, to check if all command in the function exist in documentation.
+    pass

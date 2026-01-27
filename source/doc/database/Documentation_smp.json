@@ -1,0 +1,67 @@
+{
+  "add": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th",
+    "description": "add's values together. as; a+b+c+...+n_th"
+  },
+  "mul": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th",
+    "description": "multiplies's values together. as; a*b*c*...*n_th"
+  },
+  "sub": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "subtracts a from b, a - b."
+  },
+  "div": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "divides value a from b, a/b."
+  },
+  "pwr": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "a**b, a^b, a with power b."
+  },
+  "sqrt": {
+    "category": "smp",
+    "args": "a",
+    "description": "value x when multiplied to itself gives a(input), thus; x*x = a"
+  },
+  "arithmetic_average": {
+    "category": "smp",
+    "args": "a, b, c, ..., n_th",
+    "description": "average; (a+b+c+...+n_term)/(no of terms), can be list"
+  },
+  "abs": {
+    "category": "smp",
+    "args": "a",
+    "description": "absolute, if number n is < 0; then -(n), if 0; then 0; if > 0 then n."
+  },
+  "min": {
+    "category": "smp",
+    "args": "[a, b, c, ..., n_th]",
+    "description": "minimum of the given values, can be list"
+  },
+  "max": {
+    "category": "smp",
+    "args": "[a, b, c, ..., n_th]",
+    "description": "maximum of the given values, can be list"
+  },
+  "round": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "rounds number to given decimal places, 2 inputs(input_number, decimal_places)"
+  },
+  "distance": {
+    "category": "smp",
+    "args": "a, b",
+    "description": "gives distance between 2 points on a 1-D axis, value is absolute, 2 inputs(start-point, end-point)"
+  },
+  "receprocal": {
+    "category": "smp",
+    "args": "x",
+    "description": "receprocal of x returns 1/x. 1 input(value)"
+  }
+}

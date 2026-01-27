@@ -1,14 +1,13 @@
-#  Documentaiton function rework
+# Documentation addition framework API
 # ADD Default Values System for all + future.
-# -Function Metadata Standardization
 # Self-Validation Tool checks if all function in json exists in code
 # Geometry Entry Point
 from source import main as math
 
-command = "sum"
+command = "add"
 
-print(math.doc("total"))
-# print(math.smp(command, 1, 0, 2))
+print(math.doc(command))
+# print(math.smp(command, 2, 5))
 
 
 # TODO --
