@@ -1,19 +1,11 @@
 # local modules
+
+
 from . import synonyms as synonyms
 from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
-
-
-# documentation access
-def documentation(name):
-    if name in synonyms.Docu:
-        docu = synonyms.Docu[name]
-    else:
-        raise ValueError(
-            "Not Found in Documentation database - check the function name(priority)"
-        )
-    return docu
+from .doc import documentation
 
 
 # SIMPLE - Function
@@ -59,12 +51,32 @@ def cmplx(function_name, *inputs):
     return cmplx_distributor.distribute(filtered_function_name, *inputs)
 
 
-# DOCUMENTATION return
+# WIP, SEE AGAGIN FOR RELIABILITY.
 def doc(function_name):
-    if function_name == None:
-        raise ValueError("Call without any inputs.")
-    if function_name in synonyms.Synonyms:
-        filtered_function_name = synonyms.Synonyms[function_name]
+    list_categories = ["smp", "adv", "cmplx", "total"]
+    n = 0
+    nu = 0
+    filtered_function_name = ""
+    for i in range(len(list_categories)):
+        if function_name == list_categories[n]:
+            return documentation.get_documentation(function_name, "file")
+        n += 1
     else:
-        filtered_function_name = function_name
-    return documentation(filtered_function_name)
+        if function_name in synonyms.Synonyms:
+            filtered_function_name = synonyms.Synonyms[function_name]
+        else:
+            filtered_function_name = function_name
+    while nu < len(list_categories):
+        if filtered_function_name in documentation.get_documentation(
+            list_categories[nu], "file"
+        ):
+            category = list_categories[nu]
+            return documentation.get_documentation(filtered_function_name, category)
+        nu += 1
+    else:
+        raise ValueError("Function not found in documentation. any")
+
+
+def validate():
+    # create the validation tool, to check if all command in the function exist in documentation.
+    pass

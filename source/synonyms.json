@@ -25,7 +25,7 @@
   "maximum": "max",
   "random_integer": "random-int",
   "random_in": "random-int",
-  "ran-i": "random-int",
+  "ran_i": "random-int",
   "rand": "random",
   "ran": "random",
   "norm": "normalize",

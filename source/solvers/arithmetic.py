@@ -1,11 +1,6 @@
 # Rule
 # A single fundamental maths function, returning a single value. nothing in between, lists can be count as single vlaue if in loop.
 # No hardcoded values or "cheats"
-
-
-from operator import sub
-
-
 def add_function(*inputs):
     return sum(inputs)
 
