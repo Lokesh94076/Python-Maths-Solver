@@ -46,7 +46,7 @@ file_cmplx = "database\\Documentation_cmplx.json"
 # This should work
 def add(name, category, arg, description):
     # adds to _total.json
-    add_function_to_json(
+    total = add_function_to_json(
         file_total,
         name,
         category,
@@ -55,7 +55,7 @@ def add(name, category, arg, description):
     )
 
     # add to particular category
-    category = category.lower()  # normalize for if statements
+    category = category.strip().lower()  # normalize for if statements
     all_category = ["smp", "adv", "cmplx"]
     n = 0  # for loop counter
     category_found = ""
@@ -67,7 +67,7 @@ def add(name, category, arg, description):
 
     # shitty slop
     if category_found == all_category[0]:
-        return add_function_to_json(
+        categ = add_function_to_json(
             file_smp,
             name,
             category,
@@ -75,7 +75,7 @@ def add(name, category, arg, description):
             description,
         )
     elif category_found == all_category[1]:
-        return add_function_to_json(
+        categ = add_function_to_json(
             file_adv,
             name,
             category,
@@ -83,13 +83,15 @@ def add(name, category, arg, description):
             description,
         )
     elif category_found == all_category[2]:
-        return add_function_to_json(
+        categ = add_function_to_json(
             file_cmplx,
             name,
             category,
             arg,
             description,
         )
+
     # not quite sure
     else:
         raise ValueError("Category does not exist.")
+    return True

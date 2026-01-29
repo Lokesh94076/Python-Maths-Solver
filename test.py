@@ -3,7 +3,7 @@
 # Geometry Entry Point
 from source import main as math
 
-math.create_documentation("name", "category", "arguments", "description")
+print(math.create_documentation("s", "smp", "arguments", "description"))
 # print(math.smp(command, 2, 5))
 
 

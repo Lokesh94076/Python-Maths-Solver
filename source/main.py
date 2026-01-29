@@ -79,10 +79,8 @@ def doc(function_name):
 
 # to add new files\categories, open documentation_addition.py, add new file paths, and new elif commands
 def create_documentation(name, category, arg, description):
-    name = name.lower()
-    print(
-        documentation_addition.add(name, category, arg, description)
-    )  # ONLY EXCEPTION FOR PRINT
+    name = name.strip().lower()
+    return documentation_addition.add(name, category, arg, description)
 
 
 def validate():
