@@ -5,7 +5,7 @@ from . import synonyms as synonyms
 from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
-from .doc import documentation
+from .doc import documentation, documentation_addition
 
 
 # SIMPLE - Function
@@ -75,6 +75,14 @@ def doc(function_name):
         nu += 1
     else:
         raise ValueError("Function not found in documentation. any")
+
+
+# to add new files\categories, open documentation_addition.py, add new file paths, and new elif commands
+def create_documentation(name, category, arg, description):
+    name = name.lower()
+    print(
+        documentation_addition.add(name, category, arg, description)
+    )  # ONLY EXCEPTION FOR PRINT
 
 
 def validate():

@@ -1,12 +1,9 @@
-# Documentation addition framework API
 # ADD Default Values System for all + future.
 # Self-Validation Tool checks if all function in json exists in code
 # Geometry Entry Point
 from source import main as math
 
-command = "add"
-
-print(math.doc(command))
+math.create_documentation("name", "category", "arguments", "description")
 # print(math.smp(command, 2, 5))
 
 
