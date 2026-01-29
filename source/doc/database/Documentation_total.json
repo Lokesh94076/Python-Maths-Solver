@@ -118,10 +118,5 @@
     "category": "adv",
     "args": "a, b, c",
     "description": "value x to a specific range [min, max] by wrapping it back to the start if it exceeds the maximum, or back to the end if it falls below the minimum, 3 inputs(value, min, max)"
-  },
-  "name": {
-    "category": "category",
-    "args": "arguments",
-    "description": "description"
   }
 }
