@@ -17,7 +17,7 @@
   "sign": {
     "category": "adv",
     "args": "x",
-    "description": "sign(x) returns -1 if x<0; returns 0 if x=0; returns 1 if x<1. 1 input(value)"
+    "description": "sign(x) returns -1 if x<0; returns 0 if x=0; returns 1 if x>1. 1 input(value)"
   },
   "abs_equal": {
     "category": "adv",
