@@ -3,10 +3,10 @@
 # Geometry Entry Point
 from source import main as math
 
-print(math.create_documentation("s", "smp", "arguments", "description"))
+# print(math.create_documentation("s", "smp", "arguments", "description"))
+
 # print(math.smp(command, 2, 5))
-
-
+math.validate()
 # TODO --
 # 1- Make default options for every command.  -- TOMORROW
 # 2- Better error handling and better call function

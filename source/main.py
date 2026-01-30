@@ -6,6 +6,7 @@ from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
 from .doc import documentation, documentation_addition
+from .tools import validate as validation
 
 
 # SIMPLE - Function
@@ -53,6 +54,7 @@ def cmplx(function_name, *inputs):
 
 # WIP, SEE AGAGIN FOR RELIABILITY.
 def doc(function_name):
+    function_name = function_name.strip().lower()
     list_categories = ["smp", "adv", "cmplx", "total"]
     n = 0
     nu = 0
@@ -85,4 +87,4 @@ def create_documentation(name, category, arg, description):
 
 def validate():
     # create the validation tool, to check if all command in the function exist in documentation.
-    pass
+    validation.start()
