@@ -3,7 +3,7 @@ from ..solvers import advance_data_logic as advance
 OPS = {
     "clamp": advance.clamp,
     "normalize": advance.normalize,
-    "1D_lerp": advance.oneD_lerp,
+    "1d_lerp": advance.oneD_lerp,
     "sign": advance.sign,
     "abs_equal": advance.abs_equal,
     "apx_eql": advance.approx_equal,
