@@ -1,5 +1,5 @@
+# Human readable format to internal math code - important
 # ADD Default Values System for all + future.
-# Fix self vaidation tool, with way to match names, we alreay have lists
 # Geometry Entry Point
 from source import main as math
 

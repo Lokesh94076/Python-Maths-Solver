@@ -86,5 +86,4 @@ def create_documentation(name, category, arg, description):
 
 
 def validate():
-    # create the validation tool, to check if all command in the function exist in documentation.
     validation.start()

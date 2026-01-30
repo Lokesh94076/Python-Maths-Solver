@@ -1,7 +1,7 @@
 import json
 import os
-from platform import freedesktop_os_release
 
+# local imports
 from ..distributor import adv_distributor, cmplx_distributor, smp_distributor
 
 
@@ -30,6 +30,7 @@ keys_list = list(total.keys())
 number_of_function = len(keys_list)
 
 
+# Main function
 def start():
     list(map(str.lower, total_OPS))
     list(map(str.lower, keys_list))
@@ -37,6 +38,8 @@ def start():
     keys_list.sort()
     name_pass_list = []
     name_fail_list = []
+    ops = set(total_OPS)
+    keys = set(keys_list)
 
     def name_test():
         n = 0
@@ -79,7 +82,11 @@ def start():
                 print(
                     f"\n\nFail!, all or some tests are not completed  {name_fail_list}"
                 )
+                print(f"Missing in operator - {keys - ops}")
+                print(f"Missing in documentation - {ops - keys}")
         else:
             print("\n\nFail!, all or some tests are not completed")
+            print(f"Missing in operator - {keys - ops}")
+            print(f"Missing in documentation - {ops - keys}")
 
     print_result()
