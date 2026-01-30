@@ -1,6 +1,5 @@
 import json
 import os
-from multiprocessing import Value
 
 from ..distributor import adv_distributor, cmplx_distributor, smp_distributor
 
