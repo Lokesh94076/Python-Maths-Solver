@@ -1,12 +1,14 @@
 # ADD Default Values System for all + future.
-# Self-Validation Tool checks if all function in json exists in code
+# Fix self vaidation tool, with way to match names, we alreay have lists
 # Geometry Entry Point
 from source import main as math
 
-# print(math.create_documentation("s", "smp", "arguments", "description"))
+# math.create_documentation("name", "category", "arguments", "description")
 
 # print(math.smp(command, 2, 5))
 math.validate()
+
+
 # TODO --
 # 1- Make default options for every command.  -- TOMORROW
 # 2- Better error handling and better call function
