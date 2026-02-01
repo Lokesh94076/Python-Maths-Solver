@@ -4,11 +4,14 @@
 from source import main as math
 
 # math.create_documentation("name", "category", "arguments", "description")
+# command = "percent_equal"
+# print(math.doc(command))
+# print(math.adv(command, 14, 14.52, 10))
 
-# print(math.smp(command, 2, 5))
+# print(math.smp("add", 1, math.smp("mul", 2, 3)))
 math.validate()
 
-
+# print(math.solve("1.25+2*5.052"))
 # TODO --
 # 1- Make default options for every command.  -- TOMORROW
 # 2- Better error handling and better call function
