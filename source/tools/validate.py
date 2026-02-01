@@ -46,11 +46,11 @@ def start():
         for i in range(number_of_function):
             if total_OPS[n] == keys_list[n]:
                 name_pass_list.append(f"Pass: {total_OPS[n]} = {keys_list[n]}")
-                print(f"Pass: {total_OPS[n]} = {keys_list[n]}")
+                print(f"Pass: {total_OPS[n]} = {keys_list[n]}(doc)")
 
             else:
                 name_fail_list.append(f"Fail: {total_OPS[n]} = {keys_list[n]}")
-                print(f"Fail: {total_OPS[n]} = {keys_list[n]}")
+                print(f"--> Fail: {total_OPS[n]} = {keys_list[n]}(doc)")
             n += 1
         if number_of_function == len(name_pass_list):
             return True

@@ -6,6 +6,7 @@ from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
 from .doc import documentation, documentation_addition
+from .parser import lexing as lexing
 from .tools import validate as validation
 
 
@@ -87,3 +88,8 @@ def create_documentation(name, category, arg, description):
 
 def validate():
     validation.start()
+
+
+def solve(input_string):
+    input_list = list(input_string)
+    return lexing.lex(input_list)

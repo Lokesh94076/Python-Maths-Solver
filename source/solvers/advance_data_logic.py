@@ -47,7 +47,7 @@ def approx_equal(a, b, threshold):
 
 def percent_equal(a, b, percent):
     diff = art.absolute_value(art.sub_function(a, b))
-    limit = percent / art.mul_function(100, art.absolute_value(a))
+    limit = percent / art.mul_function(1, art.absolute_value(a))
     return diff <= limit
 
 
