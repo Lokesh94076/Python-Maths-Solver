@@ -7,8 +7,8 @@ def number(input):
 
 
 def operator(input):
-    tokens = ["+", "*"]
-    return input in tokens
+    operators = ["+", "*"]
+    return input in operators
 
 
 def dot(input):
