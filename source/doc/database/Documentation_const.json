@@ -1,0 +1,12 @@
+{
+  "pi": {
+    "category": "constant",
+    "args": "NILL",
+    "description": "returns the value of pi(3.14159265358979323846);"
+  },
+  "phi": {
+    "category": "const",
+    "args": "NILL",
+    "description": "returns the value phi(1.61803398874989484820);"
+  }
+}

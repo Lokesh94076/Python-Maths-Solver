@@ -41,6 +41,7 @@ file_total = "database\\Documentation_total.json"
 file_smp = "database\\Documentation_smp.json"
 file_adv = "database\\Documentation_adv.json"
 file_cmplx = "database\\Documentation_cmplx.json"
+file_const = "database\\Documentation_const.json"
 
 
 # This should work
@@ -56,7 +57,7 @@ def add(name, category, arg, description):
 
     # add to particular category
     category = category.strip().lower()  # normalize for if statements
-    all_category = ["smp", "adv", "cmplx"]
+    all_category = ["smp", "adv", "cmplx", "const"]
     n = 0  # for loop counter
     category_found = ""
     # search algorithm
@@ -90,7 +91,14 @@ def add(name, category, arg, description):
             arg,
             description,
         )
-
+    elif category_found == all_category[3]:
+        categ = add_function_to_json(
+            file_const,
+            name,
+            category,
+            arg,
+            description,
+        )
     # not quite sure
     else:
         raise ValueError("Category does not exist.")

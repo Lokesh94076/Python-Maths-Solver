@@ -58,6 +58,18 @@ def get_documentation(Name, type):
                 "Not Found in Documentation database - check the function name(priority)"
             )
         return doc
+    elif type == "const":
+        with open(find_file_path_os("database\\Documentation_const.json"), "r") as file:
+            document = json.load(file)
+
+        if Name in document:
+            docu = document[Name]
+            doc = json.dumps(docu, indent=4)
+        else:
+            raise ValueError(
+                "Not Found in Documentation database - check the function name(priority)"
+            )
+        return doc
 
     else:
         raise ValueError("wrong internal input - documentation API")

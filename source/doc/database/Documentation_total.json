@@ -118,5 +118,15 @@
     "category": "adv",
     "args": "a, b, c",
     "description": "value x to a specific range [min, max] by wrapping it back to the start if it exceeds the maximum, or back to the end if it falls below the minimum, 3 inputs(value, min, max)"
+  },
+  "phi": {
+    "category": "const",
+    "args": "NILL",
+    "description": "returns the value phi(1.61803398874989484820);"
+  },
+  "pi": {
+    "category": "const",
+    "args": "NILL",
+    "description": "returns the value pi(3.14159265358979323846);"
   }
 }

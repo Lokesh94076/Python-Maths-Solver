@@ -1,6 +1,8 @@
 import json
 import os
 
+from ..constants import constant
+
 # local imports
 from ..distributor import adv_distributor, cmplx_distributor, smp_distributor
 
@@ -17,7 +19,8 @@ def find_file_path_os(filename):
 smp_list = list(smp_distributor.OPS)
 adv_list = list(adv_distributor.OPS)
 cmplx_list = list(cmplx_distributor.OPS)
-total_OPS = smp_list + adv_list + cmplx_list
+const_list = list(constant.dict)
+total_OPS = smp_list + adv_list + cmplx_list + const_list
 
 
 # get function from documentation
