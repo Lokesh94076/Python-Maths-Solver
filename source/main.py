@@ -2,6 +2,7 @@
 
 
 from . import synonyms as synonyms
+from .constants import constant as data_constant
 from .distributor import adv_distributor as adv_distributor
 from .distributor import cmplx_distributor as cmplx_distributor
 from .distributor import smp_distributor as smp_distributor
@@ -56,7 +57,7 @@ def cmplx(function_name, *inputs):
 # WIP, SEE AGAGIN FOR RELIABILITY.
 def doc(function_name):
     function_name = function_name.strip().lower()
-    list_categories = ["smp", "adv", "cmplx", "total"]
+    list_categories = ["const", "smp", "adv", "cmplx", "total"]
     n = 0
     nu = 0
     filtered_function_name = ""
@@ -78,6 +79,11 @@ def doc(function_name):
         nu += 1
     else:
         raise ValueError("Function not found in documentation. any")
+
+
+def const(function_name):
+    function_name = function_name.strip().lower()
+    return data_constant.ratio(function_name)
 
 
 # to add new files\categories, open documentation_addition.py, add new file paths, and new elif commands
