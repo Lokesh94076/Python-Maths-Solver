@@ -9,7 +9,7 @@ from .distributor import smp_distributor as smp_distributor
 from .doc import documentation, documentation_addition
 from .parser import lexing as lexing
 from .tools import validate as validation
-
+from . import gui
 
 # SIMPLE - Function
 # Type - Only deals with simple, one input; one output operations \ fundamental operations.
@@ -99,3 +99,21 @@ def validate():
 def solve(input_string):
     input_list = list(input_string)
     return lexing.lex(input_list)
+
+def init_gui():
+    gui.main()
+
+
+def get_all_commands():
+    smp = list(smp_distributor.OPS)
+    adv = list(adv_distributor.OPS)
+    cmplx = list(cmplx_distributor.OPS)
+    total_list = smp + adv + cmplx
+    total_list.append(None)
+    return total_list
+def get_smp():
+    return list(smp_distributor.OPS)
+def get_adv():
+    return list(adv_distributor.OPS)
+def get_cmplx():
+    return list(cmplx_distributor.OPS)
