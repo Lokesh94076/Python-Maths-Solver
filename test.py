@@ -1,3 +1,3 @@
-from source import main as maths
+from source import main as math
 
-maths.init_gui()
+math.init_gui()

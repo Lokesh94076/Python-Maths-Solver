@@ -74,7 +74,7 @@
     "args": "a, b, c, d, e",
     "description": "returns normalized value restricted to 0 - 1. 5 inputs(input_value, min_value, max_value, new_min, new_max)"
   },
-  "1d_lerp": {
+  "1D_lerp": {
     "category": "adv",
     "args": "a, b, c",
     "description": "Linear interpolation, 3 inputs(value{0-1}, a-point, b-point"
