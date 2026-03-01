@@ -116,14 +116,14 @@ def detect_root():
 # NODE CREATION
 # --------------------------
 available_preset = []
-def spawn_node_center(node_id):
-    dpg.set_item_pos(node_id, dpg.get_mouse_pos())
 
 def create_preset_node(sender, app_data, user_data):
 
     preset_name = app_data
     preset = PRESETS[preset_name]
-
+    mouse_pos = dpg.get_mouse_pos()
+    x = mouse_pos[0]
+    y = mouse_pos[1]
     node_id = dpg.generate_uuid()
 
     nodes[node_id] = {
@@ -132,14 +132,14 @@ def create_preset_node(sender, app_data, user_data):
         "args": []
     }
 
-    with dpg.node(parent="editor", tag=node_id):
+    with dpg.node(parent="editor", tag=node_id, pos=(x, y)):
 
         # Header
         with dpg.node_attribute(attribute_type=dpg.mvNode_Attr_Static):
             with dpg.group(horizontal=False):
 
                 dpg.add_combo(
-                    ["smp", "adv", "cmplx", "const"],
+                    ["smp", "adv", "cmplx", "const", "doc"],
                     default_value=preset["domain"],
                     width=90,
                     callback=update_domain,
@@ -175,24 +175,25 @@ def create_preset_node(sender, app_data, user_data):
             dpg.add_separator()
             dpg.add_text("Input-")
 
-    spawn_node_center(node_id)
     
 def create_node():
 
     node_id = dpg.generate_uuid()
-
+    mouse_pos = dpg.get_mouse_pos()
+    x = mouse_pos[0]
+    y = mouse_pos[1]
     nodes[node_id] = {
         "domain": "smp",
         "operation": "add",
         "args": []
     }
 
-    with dpg.node(parent="editor", tag=node_id):
+    with dpg.node(parent="editor", tag=node_id, pos=(x, y)):
         with dpg.node_attribute(attribute_type=dpg.mvNode_Attr_Static):
             with dpg.group(horizontal=False):
                 with dpg.group(horizontal=True):
                     dpg.add_combo(
-                        ["smp", "adv", "cmplx", "const"],
+                        ["smp", "adv", "cmplx", "const", "doc"],
                         default_value="smp",
                         width=130,
                         callback=update_domain,
@@ -227,7 +228,6 @@ def create_node():
         add_argument(None, None, node_id)
         add_argument(None, None, node_id)
          # Right click popup for node
-        spawn_node_center(node_id)
 # Get viewport size
         
 
@@ -573,7 +573,7 @@ def show_context_menu(sender, app_data):
         return
 
     mouse_pos = dpg.get_mouse_pos()
-    x = mouse_pos[0] + 300
+    x = mouse_pos[0]
     y = mouse_pos[1]
     dpg.configure_item("editor_context_menu", pos=(x, y), show=True)
     dpg.focus_item("editor_context_menu")
